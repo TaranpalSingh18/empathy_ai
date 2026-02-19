@@ -75,5 +75,10 @@ async def generate_speech(request: Request):
 
 if __name__ == "__main__":
     import uvicorn
-    # Keep port 8000 if that's what your Render Start Command uses
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import os
+
+    # 1. Get the port from Railway's environment variable
+    # 2. Default to 8000 ONLY if we are running locally
+    port = int(os.environ.get("PORT", 8000))
+
+    uvicorn.run(app, host="0.0.0.0", port=port)
