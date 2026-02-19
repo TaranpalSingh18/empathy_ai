@@ -240,6 +240,7 @@ def analyze_corpus(text: str) -> Dict:
     except Exception:
         try:
             nltk.download("punkt")
+            nltk.download('punkt_tab')
         except Exception:
             pass
 
