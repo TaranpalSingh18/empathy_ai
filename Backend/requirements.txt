@@ -1,3 +1,13 @@
 fastapi>=0.95
 uvicorn[standard]>=0.22
 python-multipart
+
+# Dependencies required by empathy_engine pipeline
+transformers
+torch
+gTTS
+pydub
+numpy
+librosa
+soundfile
+nltk

@@ -97,7 +97,7 @@ def run_pipeline(text: str, output_dir: str = "static/audio") -> Dict:
 
 if __name__ == "__main__":
     sample = (
-        "I’m furious at you for not showing up yesterday. I waited for hours and felt completely ignored. But at the same time, I know you’ve been struggling, and I can’t stop caring about you. That’s what makes this hurt even more."
+        "got the acceptance email this morning! I actually screamed when I saw it. But now my heart won’t stop racing because what if I’m not good enough once I get there?"
     )
     out = run_pipeline(sample, output_dir="static/audio")
     # Print succinct result (exclude long timeline and paths for brevity)

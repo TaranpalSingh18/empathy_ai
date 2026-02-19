@@ -12,13 +12,12 @@ How it works
 
 Run locally
 
-1. Create a Python environment and install dependencies. You must have the dependencies needed by `empathy_engine` installed as well (transformers, torch, gtts, pydub, etc.).
+1. Create a Python environment and install dependencies. The `Backend/requirements.txt` already includes the packages needed by the `empathy_engine` pipeline, so you only need to install that file.
 
 ```bash
 python -m venv .venv
 .\.venv\Scripts\activate  # Windows
 pip install -r requirements.txt
-pip install -r ../empathy_engine/requirements.txt
 ```
 
 2. Start the server
