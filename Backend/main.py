@@ -21,7 +21,7 @@ app = FastAPI(title="Empathy AI Backend", version="0.1")
 # Allow the frontend running on localhost:3000 to talk to this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000","https://empathy-ai-3iiy.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
