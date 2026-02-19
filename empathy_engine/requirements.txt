@@ -1,0 +1,9 @@
+transformers
+torch
+gTTS
+pydub
+flask
+numpy
+librosa
+soundfile
+nltk
