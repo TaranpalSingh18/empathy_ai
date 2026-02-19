@@ -1,11 +1,15 @@
 [variables]
     NIXPACKS_METADATA = 'python'
+    PYTHONPATH = '.'
 
 [phases.setup]
-    nixPkgs = ['python311', 'ffmpeg']
+    # We add the specific pip package for Python 3.11
+    nixPkgs = ['python311', 'python311Packages.pip', 'ffmpeg']
 
 [phases.install]
-    cmds = ['python -m pip install -r Backend/requirements.txt']
+    # Use pip directly instead of python -m pip
+    cmds = ['pip install -r Backend/requirements.txt']
 
 [start]
-    cmd = 'uvicorn Backend.main:app --host 0.0.0.0 --port $PORT'
+    # We use python -m uvicorn to ensure it picks up the installed packages
+    cmd = 'python -m uvicorn Backend.main:app --host 0.0.0.0 --port $PORT'
