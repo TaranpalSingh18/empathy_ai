@@ -3,13 +3,11 @@
     PYTHONPATH = '.'
 
 [phases.setup]
-    # We add the specific pip package for Python 3.11
     nixPkgs = ['python311', 'python311Packages.pip', 'ffmpeg']
 
 [phases.install]
-    # Use pip directly instead of python -m pip
-    cmds = ['pip install -r Backend/requirements.txt']
+    # The --break-system-packages flag is the key here
+    cmds = ['pip install --break-system-packages -r Backend/requirements.txt']
 
 [start]
-    # We use python -m uvicorn to ensure it picks up the installed packages
     cmd = 'python -m uvicorn Backend.main:app --host 0.0.0.0 --port $PORT'
