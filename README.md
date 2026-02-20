@@ -144,6 +144,8 @@ Each emotion dial one or more vocal dimensions:
 
 ### **Concrete Examples of EMOTION_VOICE_MAP**
 
+![values](values.png)
+
 ```python
 # From config.py: emotion → intensity → voice parameters
 

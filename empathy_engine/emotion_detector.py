@@ -13,6 +13,7 @@ global pitch adjustment based on text sentiment and emotional stability.
 from typing import Dict
 import nltk
 import json
+from contextlib import asynccontextmanager
 
 try:
     from .config import compute_valence_score, compute_base_pitch, apply_base_pitch_to_params, get_voice_params
@@ -234,15 +235,15 @@ def analyze_corpus(text: str) -> Dict:
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    # Ensure punkt is available
-    try:
-        nltk.data.find("tokenizers/punkt")
-    except Exception:
-        try:
-            nltk.download("punkt")
-            nltk.download('punkt_tab')
-        except Exception:
-            pass
+    # # Ensure punkt is available
+    # try:
+    #     nltk.data.find("tokenizers/punkt")
+    # except Exception:
+    #     try:
+    #         nltk.download("punkt")
+    #         nltk.download('punkt_tab')
+    #     except Exception:
+    #         pass
 
     sentences = nltk.sent_tokenize(text)
     timeline = []
