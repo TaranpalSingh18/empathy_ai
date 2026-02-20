@@ -89,11 +89,13 @@ export default function AudioPlayer({ audioUrl, onClear }: AudioPlayerProps) {
         onEnded={handleEnded}
       />
 
-      <div className="bg-secondary border border-border rounded-2xl p-6">
+      <div className="bg-gradient-to-br from-card to-secondary/50 border-2 border-black rounded-2xl p-6 shadow-2xl">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <Volume2 size={20} className="text-accent" />
-            <h3 className="text-foreground font-medium">Audio Generated</h3>
+            <div className="p-2 bg-accent/20 rounded-lg">
+              <Volume2 size={20} className="text-white" />
+            </div>
+            <h3 className="text-foreground font-semibold">Audio Generated</h3>
           </div>
           <Button
             onClick={onClear}
@@ -109,7 +111,7 @@ export default function AudioPlayer({ audioUrl, onClear }: AudioPlayerProps) {
         <div className="flex items-center gap-4 mb-4">
           <Button
             onClick={handlePlayPause}
-            className="rounded-full p-3 h-12 w-12 bg-accent hover:bg-accent/90 text-accent-foreground flex items-center justify-center transition-all duration-200"
+            className="rounded-full p-3 h-12 w-12 bg-white hover:bg-white/90 text-black border-2 border-black flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             {isPlaying ? <Pause size={24} /> : <Play size={24} />}
           </Button>
@@ -124,11 +126,11 @@ export default function AudioPlayer({ audioUrl, onClear }: AudioPlayerProps) {
               className="flex-1 h-2 bg-border rounded-full cursor-pointer group relative"
             >
               <div
-                className="h-full bg-accent rounded-full transition-all duration-100"
+                className="h-full bg-white rounded-full transition-all duration-100"
                 style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
               />
               <div
-                className="absolute top-1/2 w-4 h-4 bg-accent rounded-full transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute top-1/2 w-4 h-4 bg-white rounded-full transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity shadow-md"
                 style={{ left: `${duration ? (currentTime / duration) * 100 : 0}%` }}
               />
             </div>
@@ -141,7 +143,7 @@ export default function AudioPlayer({ audioUrl, onClear }: AudioPlayerProps) {
         {/* Download Button */}
         <Button
           onClick={downloadAudio}
-          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-lg py-2 transition-all duration-200 flex items-center justify-center gap-2"
+          className="w-full bg-white hover:bg-white/80 text-black rounded-lg py-2 transition-all duration-200 flex items-center justify-center gap-2 font-semibold shadow-lg hover:shadow-xl"
         >
           <Download size={18} />
           Download Audio

@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Empathy AI - Voice Generation',
-  description: 'Generate natural speech with Empathy AI',
+  title: 'Empathy AI - Emotionally Aware Voice Generation',
+  description: 'Transform text into expressive speech with AI-powered emotion detection. Experience natural, professional audio generation.',
   generator: 'v0.app',
   icons: {
     icon: [

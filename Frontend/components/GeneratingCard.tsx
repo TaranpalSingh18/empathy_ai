@@ -19,14 +19,14 @@ export default function GeneratingCard() {
           : 'opacity-0 scale-95 translate-y-4'
       }`}
     >
-      <div className="bg-secondary border border-border rounded-2xl p-8 backdrop-blur-sm">
+      <div className="bg-gradient-to-br from-card to-secondary/50 border border-accent/20 rounded-2xl p-8 backdrop-blur-sm shadow-2xl">
         <div className="flex items-center justify-center gap-4">
           {/* Animated dots */}
           <div className="flex gap-2">
             {[0, 1, 2].map((i) => (
               <div
                 key={i}
-                className="w-3 h-3 bg-accent rounded-full animate-pulse"
+                className="w-3 h-3 bg-white rounded-full animate-pulse"
                 style={{
                   animationDelay: `${i * 0.15}s`,
                   animation: `pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
@@ -48,7 +48,7 @@ export default function GeneratingCard() {
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className="w-1 bg-accent rounded-full"
+              className="w-1 bg-white rounded-full"
               style={{
                 height: `${Math.sin(i / 5) * 100 + 50}%`,
                 animation: `waveform 1.5s ease-in-out infinite`,

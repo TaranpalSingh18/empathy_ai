@@ -55,22 +55,22 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-4">
-      {/* Logo and Title */}
-      <div className="mb-12 text-center">
-        <h1 className="text-5xl font-light tracking-wide mb-2">
+    <main className="min-h-screen bg-gradient-to-b from-background via-background to-secondary text-foreground flex flex-col items-center justify-center p-4">
+      {/* Header */}
+      <div className="text-center space-y-4 mb-8">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
           Empathy AI
         </h1>
-        <p className="text-sm text-muted-foreground">
-          Transform text to natural speech
+        <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto font-light">
+          Transform text into emotionally expressive speech with AI-powered emotion detection.
         </p>
       </div>
 
       {/* Main Content */}
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-2xl space-y-4">
         {/* Audio Player - Shows when audio is generated */}
         {audioUrl && !isLoading && (
-          <div className="mb-8">
+          <div className="animate-in fade-in slide-in-from-top-4 duration-300">
             <AudioPlayer audioUrl={audioUrl} onClear={handleClearAudio} />
           </div>
         )}
